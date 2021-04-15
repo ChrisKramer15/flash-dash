@@ -3,11 +3,12 @@ let minimum = document.querySelector("#minOffer");
 let offer = document.querySelector("#offerAmt");
 let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
-//setRate, setDistance still need to be completed
+let extraDistance = document.querySelector("#extraDistance");
 
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
+extraDistance = parseFloat(extraDistance.value);
 
 //calculate minutes required to complete order
 let approxTime = (distance * 2) + 5
@@ -21,7 +22,7 @@ if (grocery.checked){
 }
 
 //if distance is greater than set, minimum offer requirement is raised for estimated time to return to zone
-if(distance >= setDistance) {
+if(distance >= extraDistance) {
     minimum += distance;
 }
 
@@ -36,4 +37,9 @@ if(offer >= minimum) {
     console.log('fail');
 }
 
+}
+
+//function for displaying value for rate input
+function rateDisplay(val) {
+    document.getElementById('textInput').value=val;
 }
