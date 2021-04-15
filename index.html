@@ -21,14 +21,31 @@
   <body>
     <h1>FLASH DASH</h1>
     <form>
-      <label for="minOffer">Minimum Offer:</label
-      ><input type="text" id="minOffer" />
-      <label for="offerAmt">Offer Amount:</label
-      ><input type="text" id="offerAmt" />
-      <label for="totDistance">Total Distance (miles):</label
-      ><input type="text" id="totDistance" />
-      <label for="groceryCheck">Grocery Order (hyvee, walmart,etc.):</label
-      ><input type="checkbox" id="groceryCheck" />
+      <div class="row">
+        <div class="col-5 offset-1">
+          <label for="minOffer">Minimum Offer:</label
+          ><input type="text" id="minOffer" />
+          <label for="extraDistance">Extra Distance:</label>
+          <input type="text" id="extraDistance" />
+          <label for="ratePerMinute">Rate Per Minute:</label>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            id="ratePerMinute"
+            value="0.5"
+          />
+        </div>
+        <div class="col-5">
+          <label for="offerAmt">Offer Amount:</label
+          ><input type="text" id="offerAmt" />
+          <label for="totDistance">Total Distance (miles):</label
+          ><input type="text" id="totDistance" />
+          <label for="groceryCheck">Grocery Order (hyvee, walmart,etc.):</label
+          ><input type="checkbox" id="groceryCheck" />
+        </div>
+      </div>
       <input type="button" onclick="analyze()" value="Submit" />
     </form>
     <script src="/script.js"></script>
