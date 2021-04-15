@@ -4,11 +4,13 @@ let offer = document.querySelector("#offerAmt");
 let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
 let extraDistance = document.querySelector("#extraDistance");
+let setRate = document.querySelector("#textInput");
 
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
 extraDistance = parseFloat(extraDistance.value);
+setRate = parseFloat(setRate.value);
 
 //calculate minutes required to complete order
 let approxTime = (distance * 2) + 5
