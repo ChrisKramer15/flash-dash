@@ -5,6 +5,8 @@ let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
 let extraDistance = document.querySelector("#extraDistance");
 let setRate = document.querySelector("#textInput");
+let passDisplay = document.querySelector("#pass");
+let failDisplay = document.querySelector("#fail");
 
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
@@ -31,12 +33,15 @@ if(distance >= extraDistance) {
 //condition statements -- verifies minimum amount and rate have been achieved
 if(offer >= minimum) {
     if(rate >= setRate){
-        console.log('pass');
+        passDisplay.style.display = "block";
+        failDisplay.style.display = "none";
     }else {
-        console.log('fail');
+        failDisplay.style.display = "block";
+        passDisplay.style.display = "none";
     }
 }else {
-    console.log('fail');
+    failDisplay.style.display = "block";
+    passDisplay.style.display = "none";
 }
 
 }

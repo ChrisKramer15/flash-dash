@@ -1,1 +1,8 @@
-
+#pass {
+  display: none;
+  background-color: green;
+}
+#fail {
+  display: none;
+  background-color: red;
+}
