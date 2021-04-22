@@ -4,6 +4,7 @@
   border-style: ridge;
   border-radius: 5em;
   border-color: black;
+  font-size: 2em;
 }
 #fail {
   display: none;
@@ -11,6 +12,7 @@
   border-style: ridge;
   border-radius: 5em;
   border-color: black;
+  font-size: 2em;
 }
 
 .container1,
@@ -41,14 +43,13 @@ body {
 
 input {
   width: 5em;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 
 .status {
   text-align: center;
   width: 20%;
   margin-left: 40%;
-  margin-top: 3em;
 }
 
 .btn {
@@ -56,4 +57,13 @@ input {
   color: #f8f6f4;
   font-style: oblique;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+  #pass {
+    font-size: 1em;
+  }
+  #fail {
+    font-size: 1em;
+  }
 }
