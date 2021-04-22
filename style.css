@@ -15,30 +15,33 @@
 
 .container1,
 .container2 {
-  background-color: #035da7;
+  background-color: #9cbcd8;
+  border-color: #3291f2;
   border-style: ridge;
-  border-color: black;
   width: 80%;
-  text-align: center;
   margin-left: 10%;
   margin-bottom: 2em;
+  text-align: center;
 }
 
 body {
-  background-color: #00b069;
+  color: #f8f6f4;
+  background-color: #ccced1;
 }
 
 .title {
   text-align: center;
+  color: #3291f2;
 }
 
-#btn {
+#btnDiv {
   display: flex;
   justify-content: center;
 }
 
 input {
   width: 5em;
+  margin-bottom: 2em;
 }
 
 .status {
@@ -46,4 +49,11 @@ input {
   width: 20%;
   margin-left: 40%;
   margin-top: 3em;
+}
+
+.btn {
+  background-color: #9cbcd8;
+  color: #f8f6f4;
+  font-style: oblique;
+  font-weight: bold;
 }
