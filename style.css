@@ -6,3 +6,31 @@
   display: none;
   background-color: red;
 }
+
+.container1,
+.container2 {
+  background-color: #035da7;
+  border-style: ridge;
+  border-color: black;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
+  margin-bottom: 2em;
+}
+
+body {
+  background-color: #00b069;
+}
+
+.title {
+  text-align: center;
+}
+
+#btn {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 5em;
+}
