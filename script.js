@@ -1,3 +1,5 @@
+let numOrders = prompt("How many orders are there?");
+numOrders = parseInt(numOrders);
 function analyze() {
 let minimum = document.querySelector("#minOffer");
 let offer = document.querySelector("#offerAmt");
@@ -13,6 +15,11 @@ offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
 extraDistance = parseFloat(extraDistance.value);
 setRate = parseFloat(setRate.value);
+
+offer /= numOrders;
+distance /= numOrders;
+
+
 
 //calculate minutes required to complete order
 let approxTime = (distance * 2) + 5
@@ -30,6 +37,9 @@ if(distance >= extraDistance) {
     minimum += distance;
 }
 
+
+
+
 //condition statements -- verifies minimum amount and rate have been achieved
 if(offer >= minimum) {
     if(rate >= setRate){
@@ -43,7 +53,6 @@ if(offer >= minimum) {
     failDisplay.style.display = "block";
     passDisplay.style.display = "none";
 }
-
 }
 
 //function for displaying value for rate input
