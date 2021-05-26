@@ -1,5 +1,6 @@
-let numOrders = prompt("How many orders are there?");
-numOrders = parseInt(numOrders);
+let storedInput = localStorage.getItem("minimum")
+document.querySelector("#minOffer").innerHTML = storedInput;
+
 function analyze() {
 let minimum = document.querySelector("#minOffer");
 let offer = document.querySelector("#offerAmt");
@@ -9,12 +10,14 @@ let extraDistance = document.querySelector("#extraDistance");
 let setRate = document.querySelector("#textInput");
 let passDisplay = document.querySelector("#pass");
 let failDisplay = document.querySelector("#fail");
+let numOrders = document.querySelector("#numOrders");
 
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
 extraDistance = parseFloat(extraDistance.value);
 setRate = parseFloat(setRate.value);
+numOrders = parseInt(numOrders.value);
 
 offer /= numOrders;
 distance /= numOrders;
@@ -53,9 +56,12 @@ if(offer >= minimum) {
     failDisplay.style.display = "block";
     passDisplay.style.display = "none";
 }
-}
+let saveStorage = localStorage.setItem("minimum", minimum);
 
+
+}
 //function for displaying value for rate input
 function rateDisplay(val) {
     document.getElementById('textInput').value=val;
 }
+
