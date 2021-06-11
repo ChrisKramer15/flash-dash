@@ -1,67 +1,95 @@
-let storedInput = localStorage.getItem("minimum")
-document.querySelector("#minOffer").innerHTML = storedInput;
+let offerInput = localStorage.getItem("offerSave");
+let minimum = document.querySelector("#minOffer")
+minimum.value = offerInput;
+
+let restInput = localStorage.getItem("restSave");
+let rest = document.querySelector("#numOrders");
+rest.value = restInput;
+
+let distInput = localStorage.getItem("distSave");
+let distance = document.querySelector("#extraDistance");
+distance.value = distInput;
 
 function analyze() {
+let radios = document.getElementsByName('rateRadio');
+let setRate = 0;
+for (let i = 0, length = radios.length; i < length; i++) {
+  if (radios[i].checked) {
+      setRate = parseFloat(radios[i].value);
+
+    // only one radio can be logically checked, don't check the rest
+    break;
+  }
+}
 let minimum = document.querySelector("#minOffer");
+localStorage.setItem("offerSave", minimum.value)
 let offer = document.querySelector("#offerAmt");
 let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
 let extraDistance = document.querySelector("#extraDistance");
-let setRate = document.querySelector("#textInput");
+localStorage.setItem("distSave", extraDistance.value);
 let passDisplay = document.querySelector("#pass");
 let failDisplay = document.querySelector("#fail");
 let numOrders = document.querySelector("#numOrders");
+localStorage.setItem("restSave", numOrders.value);
+let statusContain = document.querySelector("#primaryContainer");
 
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
 extraDistance = parseFloat(extraDistance.value);
-setRate = parseFloat(setRate.value);
 numOrders = parseInt(numOrders.value);
 
-offer /= numOrders;
-distance /= numOrders;
+//amount of allowed minutes to complete order
+let maxMinutes = 0;
+console.log(maxMinutes);
+console.log(setRate);
+console.log(offer);
+maxMinutes = 60 / (setRate / offer) ;
+console.log(maxMinutes);
+//allowed minutes minus restaurant wait time
+let restaurant = 5;
+restaurant *= numOrders;
+let timeRemaining = maxMinutes - restaurant;
+timeRemaining = timeRemaining - (distance * 2);
 
+minimum *= numOrders;
+if (distance >= extraDistance){
+  timeRemaining = timeRemaining - (distance * 2);  
+}
 
-
-//calculate minutes required to complete order
-let approxTime = (distance * 2) + 5
 
 //calculate approx. money received per minute
-let rate = offer / approxTime
+// let rate = offer / approxTime;
 
 //if grocery order, minimum required is doubled to account for wait times/effort required
 if (grocery.checked){
     minimum *= 2;
 }
 
-//if distance is greater than set, minimum offer requirement is raised for estimated time to return to zone
-if(distance >= extraDistance) {
-    minimum += distance;
-}
-
-
-
+console.log(timeRemaining);
 
 //condition statements -- verifies minimum amount and rate have been achieved
 if(offer >= minimum) {
-    if(rate >= setRate){
+    if(timeRemaining >= 0){
+        
         passDisplay.style.display = "block";
         failDisplay.style.display = "none";
+        statusContain.style.backgroundColor = "green";
     }else {
         failDisplay.style.display = "block";
         passDisplay.style.display = "none";
+        statusContain.style.backgroundColor = "red";
     }
 }else {
     failDisplay.style.display = "block";
     passDisplay.style.display = "none";
+    statusContain.style.backgroundColor = "red";
 }
-let saveStorage = localStorage.setItem("minimum", minimum);
 
 
 }
-//function for displaying value for rate input
-function rateDisplay(val) {
-    document.getElementById('textInput').value=val;
-}
+
+
+
 
