@@ -7,7 +7,6 @@ let rest = document.querySelector("#numOrders");
 rest.value = restInput;
 
 let distInput = localStorage.getItem("distSave");
-let distance = document.querySelector("#extraDistance");
 distance.value = distInput;
 
 function analyze() {
@@ -26,8 +25,6 @@ localStorage.setItem("offerSave", minimum.value)
 let offer = document.querySelector("#offerAmt");
 let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
-let extraDistance = document.querySelector("#extraDistance");
-localStorage.setItem("distSave", extraDistance.value);
 let passDisplay = document.querySelector("#pass");
 let failDisplay = document.querySelector("#fail");
 let numOrders = document.querySelector("#numOrders");
@@ -37,26 +34,21 @@ let statusContain = document.querySelector("#primaryContainer");
 minimum = parseFloat(minimum.value);
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
-extraDistance = parseFloat(extraDistance.value);
 numOrders = parseInt(numOrders.value);
 
 //amount of allowed minutes to complete order
 let maxMinutes = 0;
-console.log(maxMinutes);
-console.log(setRate);
-console.log(offer);
 maxMinutes = 60 / (setRate / offer) ;
-console.log(maxMinutes);
 //allowed minutes minus restaurant wait time
 let restaurant = 5;
+if (grocery.checked) {
+  restaurant = 10;
+}
 restaurant *= numOrders;
 let timeRemaining = maxMinutes - restaurant;
-timeRemaining = timeRemaining - (distance * 2);
+timeRemaining = timeRemaining - (distance * 4);
 
 minimum *= numOrders;
-if (distance >= extraDistance){
-  timeRemaining = timeRemaining - (distance * 2);  
-}
 
 
 //calculate approx. money received per minute
@@ -67,7 +59,6 @@ if (grocery.checked){
     minimum *= 2;
 }
 
-console.log(timeRemaining);
 
 //condition statements -- verifies minimum amount and rate have been achieved
 if(offer >= minimum) {
