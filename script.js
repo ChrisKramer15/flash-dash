@@ -7,7 +7,7 @@ let rest = document.querySelector("#numOrders");
 rest.value = restInput;
 
 let distInput = localStorage.getItem("distSave");
-distance.value = distInput;
+// distance.value = distInput;
 
 function analyze() {
 let radios = document.getElementsByName('rateRadio');
@@ -38,15 +38,19 @@ numOrders = parseInt(numOrders.value);
 
 //amount of allowed minutes to complete order
 let maxMinutes = 0;
+console.log("max minutes: " + maxMinutes)
 maxMinutes = 60 / (setRate / offer) ;
 //allowed minutes minus restaurant wait time
+console.log("max minutes: " + maxMinutes)
 let restaurant = 5;
 if (grocery.checked) {
   restaurant = 10;
 }
 restaurant *= numOrders;
 let timeRemaining = maxMinutes - restaurant;
-timeRemaining = timeRemaining - (distance * 4);
+console.log(`time remaining: ${timeRemaining}`)
+timeRemaining = timeRemaining - (distance * 2);
+console.log(`time remaining: ${timeRemaining}`)
 
 minimum *= numOrders;
 
