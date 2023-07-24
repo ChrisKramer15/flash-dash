@@ -27,6 +27,7 @@ let distance = document.querySelector("#totDistance");
 let grocery = document.querySelector("#groceryCheck");
 let passDisplay = document.querySelector("#pass");
 let failDisplay = document.querySelector("#fail");
+let pphDisplay = document.querySelector("#pph");
 let numOrders = document.querySelector("#numOrders");
 localStorage.setItem("restSave", numOrders.value);
 let statusContain = document.querySelector("#primaryContainer");
@@ -49,7 +50,7 @@ if (grocery.checked) {
 restaurant *= numOrders;
 let timeRemaining = maxMinutes - restaurant;
 console.log(`time remaining: ${timeRemaining}`)
-timeRemaining = timeRemaining - (distance * 2);
+timeRemaining = timeRemaining - (distance * 4);
 console.log(`time remaining: ${timeRemaining}`)
 
 minimum *= numOrders;
@@ -66,6 +67,7 @@ if (grocery.checked){
 
 //condition statements -- verifies minimum amount and rate have been achieved
 if(offer >= minimum) {
+  pphDisplay.textContent = `$${(offer/(restaurant + (distance * 4)) * 60).toFixed(2)} per hour`
     if(timeRemaining >= 0){
         
         passDisplay.style.display = "block";

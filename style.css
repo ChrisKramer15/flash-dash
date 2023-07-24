@@ -26,6 +26,17 @@
   text-align: center;
 }
 
+.container3 {
+  color: magenta;
+  background-color: black;
+  border-color: #3291f2;
+  border-style: ridge;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
 body {
   color: #f8f6f4;
   background-color: #ccced1;
