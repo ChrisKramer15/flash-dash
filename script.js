@@ -30,9 +30,12 @@ numPlaces = parseInt(numPlaces.value);
 let maxMinutes = 0;
 maxMinutes = 60 / (radios / offer) ;
 //allowed minutes minus restaurant wait time
-let restaurant = 5 * numOrders;
+let restaurant = (5 * numOrders);
 if (grocery.checked) {
   restaurant = 10;
+}
+if(numPlaces > 1){
+  restaurant = (5 * numPlaces) * 1.5
 }
 restaurant *= numPlaces;
 let timeRemaining = maxMinutes - restaurant;
