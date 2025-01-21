@@ -31,7 +31,7 @@ function analyze() {
   let disTime = distance * 3
   let stopsTime = (numStops - 1) * 5
   let totTime = (restaurant + disTime + stopsTime) / 60
-  let perHour = (offer / totTime).toFixed(2)
+  let perHour = (offer / totTime)
   pphDisplay.textContent = `$${perHour} per hour`
   
   //condition statements -- verifies rate has been achieved
