@@ -17,7 +17,7 @@ let statusContain = document.querySelector("#primaryContainer");
 
 offer = parseFloat(offer.value);
 distance = parseFloat(distance.value);
-numOrders = parseInt(numStops.value);
+numStops = parseInt(numStops.value);
 
 //amount of allowed minutes to complete order
 let maxMinutes = 0;
