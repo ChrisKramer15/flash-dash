@@ -31,7 +31,7 @@ let disTime = distance * 3
 let stopsTime = (numStops - 1) * 5
 let totTime = (restaurant + disTime + stopsTime) / 60
 let perHour = (offer / totTime).toFixed(2)
-pphDisplay.textContent = `$${perHour} per hour`
+pphDisplay.textContent = `$${perHour.toFixed(2} per hour`
 
 //condition statements -- verifies rate has been achieved
 if(perHour >= radios){
