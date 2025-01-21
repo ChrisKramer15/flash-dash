@@ -1,3 +1,4 @@
+/*
 let restInput = localStorage.getItem("restSave");
 let rest = document.querySelector("#numPlaces");
 rest.value = restInput;
@@ -55,5 +56,13 @@ if(perHour >= radios){
   }
 }
 
+*/
+
+//requirements
+const minAmt = document.querySelector("#minAmt");
+const dollarPerHour = document.querySelector("#dph");
+//order details
+const offer = document.querySelector("#offer");
+const 
 
 
