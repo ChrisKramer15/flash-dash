@@ -28,9 +28,9 @@ let restaurant = 10;
 // timeRemaining = timeRemaining - (distance * 3);
 // let perHour = (offer/(restaurant + (distance * 4)) * 60).toFixed(2)
 let disTime = distance * 3
-let stopsTime = numStops * 5
+let stopsTime = (numStops - 1) * 5
 let totTime = (restaurant + disTime + stopsTime) / 60
-let perHour = offer / totTime.toFixed(2)
+let perHour = (offer / totTime).toFixed(2)
 pphDisplay.textContent = `$${perHour} per hour`
 
 //condition statements -- verifies rate has been achieved
