@@ -35,12 +35,12 @@ pphDisplay.textContent = `$${perHour} per hour`
 
 //condition statements -- verifies rate has been achieved
 if(perHour >= radios){
-  passDisplay.style.display = "block";
-  failDisplay.style.display = "none";
+  // passDisplay.style.display = "block";
+  // failDisplay.style.display = "none";
   statusContain.style.backgroundColor = "green";
   }else {
-      failDisplay.style.display = "block";
-      passDisplay.style.display = "none";
+      // failDisplay.style.display = "block";
+      // passDisplay.style.display = "none";
       statusContain.style.backgroundColor = "red";
   }
 }
