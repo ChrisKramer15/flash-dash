@@ -63,6 +63,10 @@ const minAmt = document.querySelector("#minAmt");
 const dollarPerHour = document.querySelector("#dph");
 //order details
 const offer = document.querySelector("#offer");
-const 
+const distance = document.querySelector("#distance");
+const stops = document.querySelector("#stops");
+//result details
+const totMinutes = (distance * 2) + ((stops - 1) * 5) + 10
+const pph = (totMinutes / 60) * offer
 
 
