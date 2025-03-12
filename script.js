@@ -39,8 +39,8 @@ if(numPlaces > 1){
 }
 restaurant *= numPlaces;
 let timeRemaining = maxMinutes - restaurant;
-timeRemaining = timeRemaining - (distance * 4);
-let perHour = (offer/(restaurant + (distance * 4)) * 60).toFixed(2)
+timeRemaining = timeRemaining - (distance * 3);
+let perHour = (offer/(restaurant + (distance * 3)) * 60).toFixed(2)
 pphDisplay.textContent = `$${perHour} per hour`
 
 //condition statements -- verifies rate has been achieved
